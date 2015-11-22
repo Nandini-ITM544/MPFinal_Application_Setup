@@ -12,6 +12,7 @@ $("#pikame").PikaChoose({showToolTips:true});
 </script>
 </head>
 <body>
+<div class="header"></div>
 <div class="pikachoose">
 <ul id ="pikame">
 <?php
