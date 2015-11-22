@@ -12,7 +12,6 @@ $("#pikame").PikaChoose({showToolTips:true});
 </script>
 </head>
 <body>
-<div class="header"> Image Gallery </div>
 <div class="pikachoose">
 <ul id ="pikame">
 <?php
@@ -35,9 +34,8 @@ $result = $client->describeDBInstances([
 
 $endpoint = $result['DBInstances'][0]['Endpoint']['Address'];
 //echo "begin database";
-
 $link = mysqli_connect($endpoint,"nandini","nandinipwd","Project1db") or die("Error " . mysqli_error($link));
-echo $link;
+
 /* check connection */
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
