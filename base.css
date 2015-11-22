@@ -1,7 +1,7 @@
 /* Just for the example. Fee free to delete these three lines */
-body{font-family:Helvetica, sans-serif;}
+body{font-family:Helvetica, sans-serif;background-color:green;}
 a{color:white;}
-.header {color:red;}
+.header {color:red;text-align:center;}
 .pikachoose {width: 520px; margin: 0 auto;}
 
 /* Style the thumbnails */
