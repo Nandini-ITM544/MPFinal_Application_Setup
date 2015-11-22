@@ -31,7 +31,7 @@ $result = $client->describeDBInstances([
     'DBInstanceIdentifier' => 'Project1readonly',
 ]);
 
-echo $result;
+
 
 $endpoint = $result['DBInstances'][0]['Endpoint']['Address'];
 //echo "begin database";
