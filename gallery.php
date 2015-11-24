@@ -29,14 +29,14 @@ $client = RdsClient::factory([
 ]);
 
 $result = $client->describeDBInstances([
-    'DBInstanceIdentifier' => 'Project1db',
+    'DBInstanceIdentifier' => 'project1readonly',
 ]);
 
 
 
 $endpoint = $result['DBInstances'][0]['Endpoint']['Address'];
 //echo "begin database";
-$link = mysqli_connect($endpoint,"nandini","nandinipwd","Project1db") or die("Error " . mysqli_error($link));
+$link = mysqli_connect($endpoint,"nandini","nandinipwd") or die("Error " . mysqli_error($link));
 
 /* check connection */
 if (mysqli_connect_errno()) {
