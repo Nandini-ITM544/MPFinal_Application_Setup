@@ -39,7 +39,7 @@ $result = $s3->putObject([
    'Key' => $fname,
 'SourceFile' => $uploadfile,
 ]);
-$objectrule = $client->putBucketLifecycleConfiguration([
+$objectrule = $s3->putBucketLifecycleConfiguration([
     'Bucket' => $bucket,
     'LifecycleConfiguration' => [
         'Rules' => [ 
