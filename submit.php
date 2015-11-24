@@ -38,7 +38,25 @@ $result = $s3->putObject([
     'Bucket' => $bucket,
    'Key' => $fname,
 'SourceFile' => $uploadfile,
-]);  
+]);
+$objectrule = $client->putBucketLifecycleConfiguration([
+    'Bucket' => $bucket,
+    'LifecycleConfiguration' => [
+        'Rules' => [ 
+            [
+                'Expiration' => [
+                    'Days' => 1,
+                ],
+                              
+                'Prefix' => ' ',
+                'Status' => 'Enabled',
+                
+            ],
+            
+        ],
+    ],
+]);
+  
 $url = $result['ObjectURL'];
 echo $url;
 $rds = new Aws\Rds\RdsClient([
