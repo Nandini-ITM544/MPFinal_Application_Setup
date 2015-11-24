@@ -79,14 +79,43 @@ if (mysqli_connect_errno()) {
 if (!($stmt = $link->prepare("INSERT INTO Projectrec (uname, email, phone, raws3url, finisheds3url, jpegfilename, state, DateTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"))) {
     echo "Prepare failed: (" . $link->errno . ") " . $link->error;
 }
+
 $path = new Imagick($uploadfile);
 $path->flipImage();
+mkdir("/tmp/Imagick");
+#$imagickpath ='/var/www/html/Imagick/';
+$ext = end(explode('.', $fname));
+echo $ext;
+$i = '/tmp/Imagick/';
+$j = uniqid("DestinationImage");
+$k = $j . '.' . $ext;
+$DestPath = $i . $k;
+echo $DestPath;
+$path->writeImage($DestPath);
+$flipbucket = uniqid("flippedimage",false);
+
+echo $flipbucket;
+# AWS PHP SDK version 3 create bucket
+$result = $s3->createBucket([
+    'ACL' => 'public-read',
+    'Bucket' => $flipbucket,
+]);
+
+# PHP version 3
+$result = $s3->putObject([
+    'ACL' => 'public-read',
+    'Bucket' => $flipbucket,
+   'Key' => $k,
+'SourceFile' => $DestPath,
+]);
+
+$finisheds3url=$result['ObjectURL'];
+
 $uname = "MyName";
 $email = $_POST['useremail'];
 $phone = $_POST['phone'];
 $raws3url = $url; 
 $jpegfname = basename($fname);
-$finisheds3url = "none";
 $state = 0;
 $DateTime=date("Y-m-d H:i:s");
 $stmt->bind_param("ssssssis", $uname, $email, $phone, $raws3url, $finisheds3url, $jpegfilename, $state, $DateTime);
