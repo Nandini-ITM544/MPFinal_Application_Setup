@@ -79,7 +79,8 @@ if (mysqli_connect_errno()) {
 if (!($stmt = $link->prepare("INSERT INTO Projectrec (uname, email, phone, raws3url, finisheds3url, jpegfilename, state, DateTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"))) {
     echo "Prepare failed: (" . $link->errno . ") " . $link->error;
 }
-
+$path = new Imagick($uploadfile);
+$path->flipImage();
 $uname = "MyName";
 $email = $_POST['useremail'];
 $phone = $_POST['phone'];
