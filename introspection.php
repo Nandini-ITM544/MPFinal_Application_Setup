@@ -28,4 +28,19 @@ $BackPath = $path . $append;
 echo $BackPath;
 $cmd="mysqldump --user=nandini --password=nandinipwd --host=$endpoint Project1db > $BackPath";
 exec($cmd);
+$bucketname = uniqid("dbbackupbucket", false);
+# AWS PHP SDK version 3 create bucket
+$result = $s3->createBucket([
+    'ACL' => 'public-read',
+    'Bucket' => $bucketname,
+]);
+
+# PHP version 3
+$result = $s3->putObject([
+    'ACL' => 'public-read',
+    'Bucket' => $bucketname,
+   'Key' => $append,
+'SourceFile' => $BackPath,
+]);
+
 ?>
