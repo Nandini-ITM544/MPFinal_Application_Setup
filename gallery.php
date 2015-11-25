@@ -1,7 +1,7 @@
 <html>
 <head><title> My Gallery</title>
 <link type="text/css" href="bottom.css" rel="stylesheet" />
-<link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'> 
+<link href='https://fonts.googleapis.com/css?family=Open+Sans|Indie+Flower' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <script type="text/javascript" src="jquery.jcarousel.min.js"> </script>
 <script type="text/javascript" src="jquery.pikachoose.min.js"> </script>
