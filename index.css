@@ -2,11 +2,12 @@ form
 {
 background-color:#ffc;
 width:500px;
-top:50px;
+height:800px;
 }
 .boundry
 {
 border: 1px solid black;
-padding-left:300px;
-padding-right:300px;
+padding-left:400px;
+padding-right:400px;
+padding-top:100px;
 }
