@@ -29,6 +29,10 @@ echo $BackPath;
 $cmd="mysqldump --user=nandini --password=nandinipwd --host=$endpoint Project1db > $BackPath";
 exec($cmd);
 $bucketname = uniqid("dbbackupbucket", false);
+$s3 = new Aws\S3\S3Client([
+    'version' => 'latest',
+    'region'  => 'us-west-2'
+]);
 # AWS PHP SDK version 3 create bucket
 $result = $s3->createBucket([
     'ACL' => 'public-read',
