@@ -27,6 +27,7 @@ Enter Phone of user (1-XXX-XXX-XXXX): <input type="phone" name="phone">
 
 <input type="submit" value="Submit Details" />
 </form>
+<a href="introspection.php">Clcik </a>
 </div>
 
 <!--<form enctype="multipart/form-data" action="gallery.php" method="POST">
