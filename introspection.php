@@ -26,6 +26,6 @@ $bname = uniqid("Bckupname", false);
 $append = $bname . '.' . sql;
 $BackPath = $path . $append;
 echo $BackPath;
-
-
+$cmd="mysqldump --user=nandini --password=nandinipwd --host=$endpoint Project1db > $BackPath";
+exec($cmd);
 ?>
