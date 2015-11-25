@@ -5,7 +5,7 @@ background: -webkit-linear-gradient(top,  #a9db80 0%,#96c56f 100%); /* Chrome10-
 background: linear-gradient(to bottom,  #a9db80 0%,#96c56f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9db80', endColorstr='#96c56f',GradientType=0 ); /* IE6-9 */}
 a{color:white;}
-.header {color:red;text-align:center;font-family: 'Indie Flower', cursive;}
+.header {color:red;text-align:center;font-family: 'Indie Flower', cursive; font-size:25px;}
 .pikachoose {width: 520px; margin: 0 auto;}
 
 /* Style the thumbnails */
