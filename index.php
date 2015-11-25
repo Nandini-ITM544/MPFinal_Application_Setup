@@ -2,10 +2,11 @@
 <html>
 <head><title>Form</title>
 <meta charset="utf-8">
+<link type="text/css" href="index.css" rel="stylesheet" />
 </head>
 <body>
 
-
+<div class="boundry">
 <form enctype="multipart/form-data" action="submit.php" method="POST">
     
     <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
@@ -22,7 +23,7 @@ Enter Phone of user (1-XXX-XXX-XXXX): <input type="phone" name="phone">
 
 <input type="submit" value="Submit Details" />
 </form>
-
+</div>
 
 <!--<form enctype="multipart/form-data" action="gallery.php" method="POST">
  <br>
