@@ -5,7 +5,7 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <link type="text/css" href="base.css" rel="stylesheet" />
 </head>
-<body>
+<body style="background-color:white";>
 
 <div class="boundry">
 <div class="title"> 
