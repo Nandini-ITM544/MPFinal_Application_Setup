@@ -2,6 +2,7 @@
 <html>
 <head><title>Form</title>
 <meta charset="utf-8">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <link type="text/css" href="index.css" rel="stylesheet" />
 </head>
 <body>
