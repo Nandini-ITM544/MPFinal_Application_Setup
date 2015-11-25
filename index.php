@@ -7,6 +7,9 @@
 <body>
 
 <div class="boundry">
+<div class="title"> 
+<p>Fill in the Details to proceed!! </p>
+</div>
 <form enctype="multipart/form-data" action="submit.php" method="POST">
     
     <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />

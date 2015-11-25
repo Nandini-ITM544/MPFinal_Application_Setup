@@ -2,12 +2,18 @@ form
 {
 background-color:#ffc;
 width:500px;
-height:800px;
+height:600px;
 }
 .boundry
 {
 border: 1px solid black;
 padding-left:400px;
 padding-right:400px;
-padding-top:100px;
+padding-top:50px;
+}
+.title
+{
+text-align:center;
+height:50px;
+Width:200px;
 }
