@@ -9,7 +9,7 @@ $res = $sqli_conn->query("CREATE TABLE Projectrec
 (
 id int NOT NULL AUTO_INCREMENT,
 uname VARCHAR(20),
-email VARCHAR(45),
+email VARCHAR(65),
 phone VARCHAR(20),
 raws3url VARCHAR(256),
 finisheds3url VARCHAR(256),
