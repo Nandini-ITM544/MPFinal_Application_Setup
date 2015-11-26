@@ -19,10 +19,8 @@ $("#pikame").PikaChoose({showToolTips:true});
 <?php
 session_start();
 $getemail=$_SESSION["email"];
-echo $getemail;
-$email = $_POST["email"];
 
-echo $email;
+
 require 'vendor/autoload.php';
 
 use Aws\Rds\RdsClient;
@@ -46,16 +44,28 @@ if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
+if($getemail !== ' ')
+{
 
-//below line is unsafe - $email is not checked for SQL injection -- don't do this in real life or use an ORM instead
-$link->real_query("SELECT * FROM Projectrec");
-//$link->real_query("SELECT * FROM Projectrec");
+echo "l";
+$link->real_query("SELECT * FROM Projectrec where email='$getemail'");
+
 $res = $link->use_result();
 
 while ($row = $res->fetch_assoc()) {
     echo " <li><img src =\" " . $row['raws3url'] . "\" /></li>";
 
 }
+else 
+{
+$link->real_query("SELECT * FROM Projectrec");
+$res = $link->use_result();
+
+while ($row = $res->fetch_assoc()) {
+    echo " <li><img src =\" " . $row['finisheds3url'] . "\" /></li>";
+
+}
+
 $link->close();
 ?>
 </ul>
