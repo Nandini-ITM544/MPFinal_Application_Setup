@@ -18,7 +18,10 @@ $("#pikame").PikaChoose({showToolTips:true});
 <ul id ="pikame">
 <?php
 session_start();
+$getemail=$_SESSION["email"];
+echo $getemail;
 $email = $_POST["email"];
+
 echo $email;
 require 'vendor/autoload.php';
 
