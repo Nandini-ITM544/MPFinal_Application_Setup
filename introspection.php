@@ -46,5 +46,6 @@ $result = $s3->putObject([
    'Key' => $append,
 'SourceFile' => $BackPath,
 ]);
+session_destroy();
 header("location: gallery.php");
 ?>
