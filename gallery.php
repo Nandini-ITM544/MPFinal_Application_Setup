@@ -54,7 +54,7 @@ $res = $link->use_result();
 
 while ($row = $res->fetch_assoc()) {
     echo " <li><img src =\" " . $row['raws3url'] . "\" /></li>";
-
+echo " <img src =\" " . $row['finisheds3url'] . "\" style="float:left;"/>";
 }
 }
 else 
@@ -63,8 +63,8 @@ $link->real_query("SELECT * FROM Projectrec");
 $res = $link->use_result();
 
 while ($row = $res->fetch_assoc()) {
-    echo " <li><img src =\" " . $row['finisheds3url'] . "\" /></li>";
-
+    echo " <li><img src =\" " . $row['raws3url'] . "\" /></li>";
+    
 }
 }
 
