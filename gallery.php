@@ -37,17 +37,17 @@ $result = $client->describeDBInstances([
 
 $endpoint = $result['DBInstances'][0]['Endpoint']['Address'];
 //echo "begin database";
-$link = mysqli_connect($endpoint,"nandini","nandinipwd",Project1db) or die("Error " . mysqli_error($link));
+$link = mysqli_connect($endpoint,"nandini","nandinipwd","Project1db") or die("Error " . mysqli_error($link));
 
 /* check connection */
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
-if($getemail !== ' ')
+if(!empty($getemail))
 {
 
-echo "l";
+
 $link->real_query("SELECT * FROM Projectrec where email='$getemail'");
 
 $res = $link->use_result();
@@ -55,6 +55,7 @@ $res = $link->use_result();
 while ($row = $res->fetch_assoc()) {
     echo " <li><img src =\" " . $row['raws3url'] . "\" /></li>";
 
+}
 }
 else 
 {
@@ -64,6 +65,7 @@ $res = $link->use_result();
 while ($row = $res->fetch_assoc()) {
     echo " <li><img src =\" " . $row['finisheds3url'] . "\" /></li>";
 
+}
 }
 
 $link->close();
