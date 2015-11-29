@@ -31,8 +31,6 @@ $result = $client->describeDBInstances([
     'DBInstanceIdentifier' => 'project1readonly',
 ]);
 
-
-
 $endpoint = $result['DBInstances'][0]['Endpoint']['Address'];
 //echo "begin database";
 $link = mysqli_connect($endpoint,"nandini","nandinipwd","Project1db") or die("Error " . mysqli_error($link));
@@ -44,12 +42,8 @@ if (mysqli_connect_errno()) {
 }
 if(!empty($getemail))
 {
-
-
 $link->real_query("SELECT * FROM Projectrec where email='$getemail'");
-
 $res = $link->use_result();
-
 while ($row = $res->fetch_assoc()) {
     echo " <li><img src =\" " . $row['raws3url'] . "\" /></li>";
 echo " <li><img src =\" " . $row['finisheds3url'] . "\" /></li>";
@@ -59,17 +53,13 @@ else
 {
 $link->real_query("SELECT * FROM Projectrec");
 $res = $link->use_result();
-
 while ($row = $res->fetch_assoc()) {
     echo " <li><img src =\" " . $row['raws3url'] . "\" /></li>";
-    
+    }
 }
-}
-
 $link->close();
 ?>
 </ul>
 </div>
-
 </body>
 </html>
