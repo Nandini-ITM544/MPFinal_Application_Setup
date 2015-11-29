@@ -18,11 +18,9 @@ $("#pikame").PikaChoose({showToolTips:true});
 <ul id ="pikame">
 <?php
 session_start();
+$_SESSION["email"]=$_POST['email'];
 $getemail=$_SESSION["email"];
-
-
 require 'vendor/autoload.php';
-
 use Aws\Rds\RdsClient;
 $client = RdsClient::factory([
 'region'  => 'us-west-2' ,
