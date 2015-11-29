@@ -105,7 +105,23 @@ $result = $s3->putObject([
    'Key' => $k,
 'SourceFile' => $DestPath,
 ]);
-
+$objectrulef = $s3->putBucketLifecycleConfiguration([
+    'Bucket' => $flipbucket,
+    'LifecycleConfiguration' => [
+        'Rules' => [ 
+            [
+                'Expiration' => [
+                    'Date' => '2015-12-24',
+                ],
+                              
+                'Prefix' => ' ',
+                'Status' => 'Enabled',
+                
+            ],
+            
+        ],
+    ],
+]);
 $finisheds3url=$result['ObjectURL'];
 $uname = "MyName";
 $email = $_POST['useremail'];

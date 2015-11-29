@@ -43,6 +43,23 @@ $result = $s3->putObject([
    'Key' => $append,
 'SourceFile' => $BackPath,
 ]);
+$objectruledb = $s3->putBucketLifecycleConfiguration([
+    'Bucket' => $bucketname,
+    'LifecycleConfiguration' => [
+        'Rules' => [ 
+            [
+                'Expiration' => [
+                    'Date' => '2015-12-24',
+                ],
+                              
+                'Prefix' => ' ',
+                'Status' => 'Enabled',
+                
+            ],
+            
+        ],
+    ],
+]);
 session_destroy();
 header("location: gallery.php");
 ?>
