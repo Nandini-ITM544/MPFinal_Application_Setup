@@ -1,10 +1,5 @@
-
-
-
-
 <?php
 $sqli_conn = new mysqli("project1db.c7brzs9x3acd.us-west-2.rds.amazonaws.com","nandini","nandinipwd","Project1db",3306) or die("Error " . mysqli_error($link)); 
-
 $res = $sqli_conn->query("CREATE TABLE Projectrec
 (
 id int NOT NULL AUTO_INCREMENT,
