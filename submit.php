@@ -1,8 +1,6 @@
 <?php
 // Start the session
 session_start();
-// In PHP versions earlier than 4.1.0, $HTTP_POST_FILES should be used instead
-// of $_FILES.
 echo $_POST['useremail'];
 $uploaddir = '/tmp/';
 $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
@@ -93,7 +91,6 @@ $DestPath = $i . $k;
 echo $DestPath;
 $path->writeImage($DestPath);
 $flipbucket = uniqid("flippedimage",false);
-
 echo $flipbucket;
 # AWS PHP SDK version 3 create bucket
 $result = $s3->createBucket([
@@ -110,7 +107,6 @@ $result = $s3->putObject([
 ]);
 
 $finisheds3url=$result['ObjectURL'];
-
 $uname = "MyName";
 $email = $_POST['useremail'];
 $phone = $_POST['phone'];
@@ -119,8 +115,6 @@ $jpegfname = basename($fname);
 $state = 0;
 $DateTime=date("Y-m-d H:i:s");
 $stmt->bind_param("ssssssis", $uname, $email, $phone, $raws3url, $finisheds3url, $jpegfilename, $state, $DateTime);
-
-
 if (!$stmt->execute()) {
     echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
 }
@@ -133,7 +127,6 @@ $sns = new Aws\Sns\SnsClient([
 $Arn = $sns->createTopic([
 'Name' => 'mp2',
 ]);
-
 $subscribe = $sns->subscribe([
 'Endpoint' => $email,
 'Protocol' => 'email',
@@ -150,12 +143,8 @@ $publisher = $sns->publish([
 'Message' => 'Congrats!! Your Image has been uploaded Successfully',
 'TopicArn' => $Arn['TopicArn'],
 ]);
-
-
-
 header("location: gallery.php");
 $stmt->close();
-
 $link->real_query("SELECT * FROM Projectrec");
 $res = $link->use_result();
 echo "Result set order...\n";
