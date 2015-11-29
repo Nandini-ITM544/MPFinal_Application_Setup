@@ -72,6 +72,6 @@ $link->close();
 ?>
 </ul>
 </div>
-<div> hi da </div>
+
 </body>
 </html>
