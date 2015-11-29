@@ -27,12 +27,14 @@ Enter Phone of user (1-XXX-XXX-XXXX): <input type="phone" name="phone">
 
 <input type="submit" value="Submit Details" />
 </form>
-
+<br>
+<div class="gall"> <p> View Gallery of a Particular User</p> </div>
 <form enctype="multipart/form-data" action="gallery.php" method="POST">
  <br>
 Enter Email of user for gallery to browse: <input type="email" name="email">
 <input type="submit" value="Load Gallery" />
 </form>
+<br>
 <a href="introspection.php">Take DB Backup and view Gallery </a>
 </div>
 
